@@ -21,6 +21,9 @@ matrix:
 #    - vendor
 #    - $HOME/.composer/cache
 
+before_install:
+  - echo "memory_limit=2G" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+
 install:
   - |
     if [[ $TRAVIS_PHP_VERSION != '7.1' && $TRAVIS_PHP_VERSION != hhv* ]]; then
